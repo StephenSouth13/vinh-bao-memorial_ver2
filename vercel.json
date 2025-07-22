@@ -6,12 +6,6 @@
   "framework": "vite",
   "outputDirectory": "dist/spa",
 
-  "functions": {
-    "server/node-build.mjs": {
-      "runtime": "nodejs18.x"
-    }
-  },
-
   "rewrites": [
     {
       "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
