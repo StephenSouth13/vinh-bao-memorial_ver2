@@ -5,12 +5,13 @@
   "installCommand": "pnpm install",
   "framework": "vite",
   "outputDirectory": "dist/spa",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
+
+  "functions": {
+    "server/node-build.mjs": {
+      "runtime": "nodejs18.x"
     }
-  ],
+  },
+
   "routes": [
     {
       "src": "/api/(.*)",
@@ -21,11 +22,7 @@
       "dest": "/index.html"
     }
   ],
-  "functions": {
-    "server/node-build.mjs": {
-      "runtime": "nodejs18.x"
-    }
-  },
+
   "rewrites": [
     {
       "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
